@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Human Acceptance Decision",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decision",
+    "reviewer",
+    "timestamp_utc",
+    "run_id",
+    "rationale",
+    "known_limitations"
+  ],
+  "properties": {
+    "decision": {
+      "enum": ["ACCEPT", "REJECT"]
+    },
+    "reviewer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "known_limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

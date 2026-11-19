@@ -1,0 +1,20 @@
+
+> smart-todo-management-api@1.0.0 test:integration
+> node --experimental-strip-types --test tests/integration/json-task-store.test.ts
+
+✔ a missing store loads as an empty collection without creating task data (63.0371ms)
+✔ saving and loading a JSON task collection preserves every task field (56.5998ms)
+✔ a new service and store instance restore saved tasks after restart (46.7963ms)
+✔ malformed and invalid collections fail without changing their stored bytes (106.3332ms)
+✔ read and write failures are surfaced and do not alter the blocking file (45.1106ms)
+✔ a failed save leaves the previous valid task collection unchanged (34.9198ms)
+✔ overlapping creates preserve receipt order and do not lose successful mutations (86.9863ms)
+✔ a failed queued mutation does not prevent a later mutation from succeeding (41.7323ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 856.7196

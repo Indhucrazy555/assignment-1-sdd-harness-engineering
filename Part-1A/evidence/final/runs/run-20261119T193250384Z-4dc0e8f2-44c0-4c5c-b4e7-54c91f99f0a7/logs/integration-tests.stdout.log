@@ -1,0 +1,38 @@
+
+> smart-todo-management-api@1.0.0 test:integration
+> node --experimental-strip-types --test tests/integration/json-task-store.test.ts
+
+✔ a missing store loads as an empty collection without creating task data (30.4146ms)
+✔ saving and loading a JSON task collection preserves every task field (23.4855ms)
+✔ a new service and store instance restore saved tasks after restart (25.3408ms)
+✔ malformed and invalid collections fail without changing their stored bytes (23.8593ms)
+✖ read and write failures are surfaced and do not alter the blocking file (4.2965ms)
+✔ a failed save leaves the previous valid task collection unchanged (14.5779ms)
+✔ overlapping creates preserve receipt order and do not lose successful mutations (32.5918ms)
+✔ a failed queued mutation does not prevent a later mutation from succeeding (17.9192ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 311.4851
+
+✖ failing tests:
+
+test at tests\integration\json-task-store.test.ts:107:1
+✖ read and write failures are surfaced and do not alter the blocking file (4.2965ms)
+  Error: ENOENT: no such file or directory, open 'C:\Users\DINESH~1\AppData\Local\Temp\smart-todo-store-8oOelc\nested\not-a-directory'
+      at async open (node:internal/fs/promises:640:25)
+      at async writeFile (node:internal/fs/promises:1260:14)
+      at async file:///F:/Workspace/assignment-1-sdd-harness-engineering/Part-1A/tests/integration/json-task-store.test.ts:112:5
+      at async withTemporaryStore (file:///F:/Workspace/assignment-1-sdd-harness-engineering/Part-1A/tests/integration/json-task-store.test.ts:32:5)
+      at async TestContext.<anonymous> (file:///F:/Workspace/assignment-1-sdd-harness-engineering/Part-1A/tests/integration/json-task-store.test.ts:108:3)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    errno: -4058,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: 'C:\\Users\\DINESH~1\\AppData\\Local\\Temp\\smart-todo-store-8oOelc\\nested\\not-a-directory'
+  }

@@ -1,0 +1,406 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Harness Run Result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_id",
+    "phase",
+    "started_at_utc",
+    "completed_at_utc",
+    "outcome",
+    "checks"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "phase": {
+      "enum": ["initial", "repair", "final"]
+    },
+    "round": {
+      "type": "string",
+      "pattern": "^[0-9]{3,}$"
+    },
+    "started_at_utc": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "completed_at_utc": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "outcome": {
+      "enum": ["PASS", "FAIL", "BLOCKED"]
+    },
+    "checks": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "prefixItems": [
+        {
+          "allOf": [
+            { "$ref": "#/$defs/checkResult" },
+            {
+              "properties": {
+                "order": { "const": 1 },
+                "check_id": { "const": "syntax" }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            { "$ref": "#/$defs/checkResult" },
+            {
+              "properties": {
+                "order": { "const": 2 },
+                "check_id": { "const": "lint" }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            { "$ref": "#/$defs/checkResult" },
+            {
+              "properties": {
+                "order": { "const": 3 },
+                "check_id": { "const": "typescript" }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            { "$ref": "#/$defs/checkResult" },
+            {
+              "properties": {
+                "order": { "const": 4 },
+                "check_id": { "const": "security-audit" }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            { "$ref": "#/$defs/checkResult" },
+            {
+              "properties": {
+                "order": { "const": 5 },
+                "check_id": { "const": "unit-tests" }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            { "$ref": "#/$defs/checkResult" },
+            {
+              "properties": {
+                "order": { "const": 6 },
+                "check_id": { "const": "integration-tests" }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            { "$ref": "#/$defs/checkResult" },
+            {
+              "properties": {
+                "order": { "const": 7 },
+                "check_id": { "const": "http-contract-tests" }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            { "$ref": "#/$defs/checkResult" },
+            {
+              "properties": {
+                "order": { "const": 8 },
+                "check_id": { "const": "coverage" }
+              }
+            }
+          ]
+        },
+        {
+          "allOf": [
+            { "$ref": "#/$defs/checkResult" },
+            {
+              "properties": {
+                "order": { "const": 9 },
+                "check_id": { "const": "integrity" }
+              }
+            }
+          ]
+        }
+      ],
+      "items": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "phase": { "const": "repair" }
+        },
+        "required": ["phase"]
+      },
+      "then": {
+        "required": ["round"]
+      },
+      "else": {
+        "not": {
+          "required": ["round"]
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "command": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["executable", "args"],
+      "properties": {
+        "executable": {
+          "type": "string",
+          "minLength": 1
+        },
+        "args": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "failureDetails": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["summary"],
+      "properties": {
+        "kind": {
+          "enum": [
+            "assertion",
+            "process",
+            "audit",
+            "integrity",
+            "timeout",
+            "missing-tool",
+            "skipped-test",
+            "other"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "failed_test_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "expected": {},
+        "actual": {},
+        "process_error": {
+          "type": "string",
+          "minLength": 1
+        },
+        "output_excerpt": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "toolVersions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "node",
+        "npm",
+        "typescript",
+        "@types/node",
+        "eslint",
+        "typescript-eslint",
+        "c8"
+      ],
+      "properties": {
+        "node": { "type": ["string", "null"], "minLength": 1 },
+        "npm": { "type": ["string", "null"], "minLength": 1 },
+        "typescript": { "type": ["string", "null"], "minLength": 1 },
+        "@types/node": { "type": ["string", "null"], "minLength": 1 },
+        "eslint": { "type": ["string", "null"], "minLength": 1 },
+        "typescript-eslint": { "type": ["string", "null"], "minLength": 1 },
+        "c8": { "type": ["string", "null"], "minLength": 1 }
+      }
+    },
+    "checkResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "order",
+        "check_id",
+        "command",
+        "tool_versions",
+        "started_at_utc",
+        "completed_at_utc",
+        "outcome",
+        "exit_code",
+        "logs"
+      ],
+      "properties": {
+        "order": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9
+        },
+        "check_id": {
+          "enum": [
+            "syntax",
+            "lint",
+            "typescript",
+            "security-audit",
+            "unit-tests",
+            "integration-tests",
+            "http-contract-tests",
+            "coverage",
+            "integrity"
+          ]
+        },
+        "command": {
+          "$ref": "#/$defs/command"
+        },
+        "tool_versions": {
+          "$ref": "#/$defs/toolVersions"
+        },
+        "started_at_utc": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "completed_at_utc": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "outcome": {
+          "enum": ["PASS", "FAIL", "BLOCKED"]
+        },
+        "exit_code": {
+          "type": ["integer", "null"]
+        },
+        "logs": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["stdout", "stderr"],
+          "properties": {
+            "stdout": {
+              "type": ["string", "null"],
+              "minLength": 1
+            },
+            "stderr": {
+              "type": ["string", "null"],
+              "minLength": 1
+            }
+          }
+        },
+        "failure_details": {
+          "$ref": "#/$defs/failureDetails"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "outcome": { "const": "PASS" }
+            },
+            "required": ["outcome"]
+          },
+          "then": {
+            "properties": {
+              "exit_code": { "const": 0 },
+              "logs": {
+                "properties": {
+                  "stdout": { "type": "string" },
+                  "stderr": { "type": "string" }
+                }
+              }
+            },
+            "not": {
+              "required": ["failure_details"]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "outcome": { "const": "FAIL" }
+            },
+            "required": ["outcome"]
+          },
+          "then": {
+            "required": ["failure_details"],
+            "properties": {
+              "logs": {
+                "properties": {
+                  "stdout": { "type": "string" },
+                  "stderr": { "type": "string" }
+                }
+              }
+            },
+            "if": {
+              "properties": {
+                "failure_details": {
+                  "properties": {
+                    "kind": { "const": "skipped-test" }
+                  },
+                  "required": ["kind"]
+                }
+              },
+              "required": ["failure_details"]
+            },
+            "then": {
+              "properties": {
+                "exit_code": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "exit_code": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "outcome": { "const": "BLOCKED" }
+            },
+            "required": ["outcome"]
+          },
+          "then": {
+            "required": ["failure_details"],
+            "properties": {
+              "exit_code": { "const": null }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

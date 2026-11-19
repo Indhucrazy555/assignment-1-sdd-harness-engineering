@@ -1,0 +1,4 @@
+
+> smart-todo-management-api@1.0.0 typecheck
+> tsc --noEmit -p tsconfig.json
+

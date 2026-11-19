@@ -1,0 +1,4 @@
+
+> smart-todo-management-api@1.0.0 lint
+> eslint "src/**/*.ts" "tests/**/*.ts" --no-error-on-unmatched-pattern --max-warnings=0
+

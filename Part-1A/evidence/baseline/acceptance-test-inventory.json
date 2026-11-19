@@ -1,0 +1,21 @@
+{
+  "testCount": 34,
+  "tests": [
+    {
+      "path": "tests/contract/tasks.http.contract.test.ts",
+      "sha256": "f58d0b10bc4af15253dd58493df76c5aab68b653d80f47df4f87265e68ad908e"
+    },
+    {
+      "path": "tests/integration/json-task-store.test.ts",
+      "sha256": "7ac0f3c3153a26967f3f482a439c338d21fba39a144d853410b734c8b3d3c66e"
+    },
+    {
+      "path": "tests/unit/task-service.test.ts",
+      "sha256": "5e0c52aab39dcd79a545ae79e4e2a22ddc1cc0738496bdd59c5b6bbe125e6546"
+    },
+    {
+      "path": "tests/unit/task-validation.test.ts",
+      "sha256": "e10a277449bde97b4f855e54758208fa9229e7bca73a44f7ceaf74279efe089a"
+    }
+  ]
+}

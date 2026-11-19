@@ -1,0 +1,44 @@
+Run: run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0
+Phase: initial
+Started: 2026-11-19T19:31:31.566Z
+Completed: 2026-11-19T19:31:46.725Z
+Outcome: FAIL
+
+1. syntax: PASS (exit 0)
+   Command: node .harness/checks/syntax.mjs
+   stdout: evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/syntax.stdout.log
+   stderr: evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/syntax.stderr.log
+2. lint: PASS (exit 0)
+   Command: npm.cmd run lint
+   stdout: evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/lint.stdout.log
+   stderr: evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/lint.stderr.log
+3. typescript: PASS (exit 0)
+   Command: npm.cmd run typecheck
+   stdout: evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/typescript.stdout.log
+   stderr: evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/typescript.stderr.log
+4. security-audit: PASS (exit 0)
+   Command: npm.cmd audit --audit-level=high
+   stdout: evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/security-audit.stdout.log
+   stderr: evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/security-audit.stderr.log
+5. unit-tests: PASS (exit 0)
+   Command: npm.cmd run test:unit
+   stdout: evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/unit-tests.stdout.log
+   stderr: evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/unit-tests.stderr.log
+6. integration-tests: FAIL (exit 1)
+   Command: npm.cmd run test:integration
+   stdout: evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/integration-tests.stdout.log
+   stderr: evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/integration-tests.stderr.log
+   Details: Command exited with code 1.
+7. http-contract-tests: PASS (exit 0)
+   Command: npm.cmd run test:contract
+   stdout: evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/http-contract-tests.stdout.log
+   stderr: evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/http-contract-tests.stderr.log
+8. coverage: FAIL (exit 1)
+   Command: npm.cmd run test:coverage
+   stdout: evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/coverage.stdout.log
+   stderr: evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/coverage.stderr.log
+   Details: Command exited with code 1.
+9. integrity: PASS (exit 0)
+   Command: node .harness/checks/verify-integrity.mjs
+   stdout: evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/integrity.stdout.log
+   stderr: evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/integrity.stderr.log

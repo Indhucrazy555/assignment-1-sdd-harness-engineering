@@ -1,0 +1,43 @@
+Run: run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4
+Phase: final
+Snapshot manifest: evidence/final/revisions/002/implementation.sha256
+Started: 2026-11-19T19:42:53.476Z
+Completed: 2026-11-19T19:43:12.604Z
+Outcome: PASS
+
+1. syntax: PASS (exit 0)
+   Command: node .harness/checks/syntax.mjs
+   stdout: evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/syntax.stdout.log
+   stderr: evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/syntax.stderr.log
+2. lint: PASS (exit 0)
+   Command: npm.cmd run lint
+   stdout: evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/lint.stdout.log
+   stderr: evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/lint.stderr.log
+3. typescript: PASS (exit 0)
+   Command: npm.cmd run typecheck
+   stdout: evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/typescript.stdout.log
+   stderr: evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/typescript.stderr.log
+4. security-audit: PASS (exit 0)
+   Command: npm.cmd audit --audit-level=high
+   stdout: evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/security-audit.stdout.log
+   stderr: evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/security-audit.stderr.log
+5. unit-tests: PASS (exit 0)
+   Command: npm.cmd run test:unit
+   stdout: evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/unit-tests.stdout.log
+   stderr: evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/unit-tests.stderr.log
+6. integration-tests: PASS (exit 0)
+   Command: npm.cmd run test:integration
+   stdout: evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/integration-tests.stdout.log
+   stderr: evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/integration-tests.stderr.log
+7. http-contract-tests: PASS (exit 0)
+   Command: npm.cmd run test:contract
+   stdout: evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/http-contract-tests.stdout.log
+   stderr: evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/http-contract-tests.stderr.log
+8. coverage: PASS (exit 0)
+   Command: npm.cmd run test:coverage
+   stdout: evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/coverage.stdout.log
+   stderr: evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/coverage.stderr.log
+9. integrity: PASS (exit 0)
+   Command: node .harness/checks/verify-integrity.mjs
+   stdout: evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/integrity.stdout.log
+   stderr: evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/integrity.stderr.log

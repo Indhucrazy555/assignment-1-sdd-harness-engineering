@@ -1,0 +1,269 @@
+{
+  "run_id": "run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0",
+  "phase": "initial",
+  "started_at_utc": "2026-11-19T19:31:31.566Z",
+  "completed_at_utc": "2026-11-19T19:31:46.725Z",
+  "outcome": "FAIL",
+  "checks": [
+    {
+      "order": 1,
+      "check_id": "syntax",
+      "command": {
+        "executable": "node",
+        "args": [
+          ".harness/checks/syntax.mjs"
+        ]
+      },
+      "tool_versions": {
+        "node": "v24.18.0",
+        "npm": "11.16.0",
+        "typescript": "6.0.3",
+        "@types/node": "24.19.2",
+        "eslint": "10.15.0",
+        "typescript-eslint": "8.73.0",
+        "c8": "12.0.0"
+      },
+      "started_at_utc": "2026-11-19T19:31:32.428Z",
+      "completed_at_utc": "2026-11-19T19:31:32.855Z",
+      "outcome": "PASS",
+      "exit_code": 0,
+      "logs": {
+        "stdout": "evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/syntax.stdout.log",
+        "stderr": "evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/syntax.stderr.log"
+      }
+    },
+    {
+      "order": 2,
+      "check_id": "lint",
+      "command": {
+        "executable": "npm.cmd",
+        "args": [
+          "run",
+          "lint"
+        ]
+      },
+      "tool_versions": {
+        "node": "v24.18.0",
+        "npm": "11.16.0",
+        "typescript": "6.0.3",
+        "@types/node": "24.19.2",
+        "eslint": "10.15.0",
+        "typescript-eslint": "8.73.0",
+        "c8": "12.0.0"
+      },
+      "started_at_utc": "2026-11-19T19:31:32.856Z",
+      "completed_at_utc": "2026-11-19T19:31:35.005Z",
+      "outcome": "PASS",
+      "exit_code": 0,
+      "logs": {
+        "stdout": "evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/lint.stdout.log",
+        "stderr": "evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/lint.stderr.log"
+      }
+    },
+    {
+      "order": 3,
+      "check_id": "typescript",
+      "command": {
+        "executable": "npm.cmd",
+        "args": [
+          "run",
+          "typecheck"
+        ]
+      },
+      "tool_versions": {
+        "node": "v24.18.0",
+        "npm": "11.16.0",
+        "typescript": "6.0.3",
+        "@types/node": "24.19.2",
+        "eslint": "10.15.0",
+        "typescript-eslint": "8.73.0",
+        "c8": "12.0.0"
+      },
+      "started_at_utc": "2026-11-19T19:31:35.005Z",
+      "completed_at_utc": "2026-11-19T19:31:36.581Z",
+      "outcome": "PASS",
+      "exit_code": 0,
+      "logs": {
+        "stdout": "evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/typescript.stdout.log",
+        "stderr": "evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/typescript.stderr.log"
+      }
+    },
+    {
+      "order": 4,
+      "check_id": "security-audit",
+      "command": {
+        "executable": "npm.cmd",
+        "args": [
+          "audit",
+          "--audit-level=high"
+        ]
+      },
+      "tool_versions": {
+        "node": "v24.18.0",
+        "npm": "11.16.0",
+        "typescript": "6.0.3",
+        "@types/node": "24.19.2",
+        "eslint": "10.15.0",
+        "typescript-eslint": "8.73.0",
+        "c8": "12.0.0"
+      },
+      "started_at_utc": "2026-11-19T19:31:36.582Z",
+      "completed_at_utc": "2026-11-19T19:31:39.851Z",
+      "outcome": "PASS",
+      "exit_code": 0,
+      "logs": {
+        "stdout": "evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/security-audit.stdout.log",
+        "stderr": "evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/security-audit.stderr.log"
+      }
+    },
+    {
+      "order": 5,
+      "check_id": "unit-tests",
+      "command": {
+        "executable": "npm.cmd",
+        "args": [
+          "run",
+          "test:unit"
+        ]
+      },
+      "tool_versions": {
+        "node": "v24.18.0",
+        "npm": "11.16.0",
+        "typescript": "6.0.3",
+        "@types/node": "24.19.2",
+        "eslint": "10.15.0",
+        "typescript-eslint": "8.73.0",
+        "c8": "12.0.0"
+      },
+      "started_at_utc": "2026-11-19T19:31:39.851Z",
+      "completed_at_utc": "2026-11-19T19:31:40.813Z",
+      "outcome": "PASS",
+      "exit_code": 0,
+      "logs": {
+        "stdout": "evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/unit-tests.stdout.log",
+        "stderr": "evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/unit-tests.stderr.log"
+      }
+    },
+    {
+      "order": 6,
+      "check_id": "integration-tests",
+      "command": {
+        "executable": "npm.cmd",
+        "args": [
+          "run",
+          "test:integration"
+        ]
+      },
+      "tool_versions": {
+        "node": "v24.18.0",
+        "npm": "11.16.0",
+        "typescript": "6.0.3",
+        "@types/node": "24.19.2",
+        "eslint": "10.15.0",
+        "typescript-eslint": "8.73.0",
+        "c8": "12.0.0"
+      },
+      "started_at_utc": "2026-11-19T19:31:40.813Z",
+      "completed_at_utc": "2026-11-19T19:31:41.734Z",
+      "outcome": "FAIL",
+      "exit_code": 1,
+      "logs": {
+        "stdout": "evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/integration-tests.stdout.log",
+        "stderr": "evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/integration-tests.stderr.log"
+      },
+      "failure_details": {
+        "kind": "process",
+        "summary": "Command exited with code 1.",
+        "output_excerpt": "stdout:\n\n> smart-todo-management-api@1.0.0 test:integration\n> node --experimental-strip-types --test tests/integration/json-task-store.test.ts\n\n✔ a missing store loads as an empty collection without creating task data (31.0016ms)\n✔ saving and loading a JSON task collection preserves every task field (20.3053ms)\n✔ a new service and store instance restore saved tasks after restart (22.2748ms)\n✔ malformed and invalid collections fail without changing their stored bytes (25.2882ms)\n✖ read and write failures are surfaced and do not alter the blocking file (3.7927ms)\n✔ a failed save leaves the previous valid task collection unchanged (14.4428ms)\n✔ overlapping creates preserve receipt order and do not lose successful mutations (32.0703ms)\n✔ a failed queued mutation does not prevent a later mutation from succeeding (19.4465ms)\nℹ tests 8\nℹ suites 0\nℹ pass 7\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 313.0157\n\n✖ failing tests:\n\ntest at tests\\integration\\json-task-store.test.ts:107:1\n✖ read and write failures are surfaced and do not alter the blocking file (3.7927ms)\n  Error: ENOENT: no such file or directory, open 'C:\\Users\\DINESH~1\\AppData\\Local\\Temp\\smart-todo-store-p1CXiy\\nested\\not-a-directory'\n      at async open (node:internal/fs/promises:640:25)\n      at async writeFile (node:internal/fs/promises:1260:14)\n      at async file:///F:/Workspace/assignment-1-sdd-harness-engineering/Part-1A/tests/integration/json-task-store.test.ts:112:5\n      at async withTemporaryStore (file:///F:/Workspace/assignment-1-sdd-harness-engineering/Part-1A/tests/integration/json-task-store.test.ts:32:5)\n      at async TestContext.<anonymous> (file:///F:/Workspace/assignment-1-sdd-harness-engineering/Part-1A/tests/integration/json-task-store.test.ts:108:3)\n      at async Test.run (node:internal/test_runner/test:1332:7)\n      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {\n    errno: -4058,\n    code: 'ENOENT',\n    syscall: 'open',\n    path: 'C:\\\\Users\\\\DINESH~1\\\\AppData\\\\Local\\\\Temp\\\\smart-todo-store-p1CXiy\\\\nested\\\\not-a-directory'\n  }\n"
+      }
+    },
+    {
+      "order": 7,
+      "check_id": "http-contract-tests",
+      "command": {
+        "executable": "npm.cmd",
+        "args": [
+          "run",
+          "test:contract"
+        ]
+      },
+      "tool_versions": {
+        "node": "v24.18.0",
+        "npm": "11.16.0",
+        "typescript": "6.0.3",
+        "@types/node": "24.19.2",
+        "eslint": "10.15.0",
+        "typescript-eslint": "8.73.0",
+        "c8": "12.0.0"
+      },
+      "started_at_utc": "2026-11-19T19:31:41.734Z",
+      "completed_at_utc": "2026-11-19T19:31:43.051Z",
+      "outcome": "PASS",
+      "exit_code": 0,
+      "logs": {
+        "stdout": "evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/http-contract-tests.stdout.log",
+        "stderr": "evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/http-contract-tests.stderr.log"
+      }
+    },
+    {
+      "order": 8,
+      "check_id": "coverage",
+      "command": {
+        "executable": "npm.cmd",
+        "args": [
+          "run",
+          "test:coverage"
+        ]
+      },
+      "tool_versions": {
+        "node": "v24.18.0",
+        "npm": "11.16.0",
+        "typescript": "6.0.3",
+        "@types/node": "24.19.2",
+        "eslint": "10.15.0",
+        "typescript-eslint": "8.73.0",
+        "c8": "12.0.0"
+      },
+      "started_at_utc": "2026-11-19T19:31:43.051Z",
+      "completed_at_utc": "2026-11-19T19:31:46.238Z",
+      "outcome": "FAIL",
+      "exit_code": 1,
+      "logs": {
+        "stdout": "evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/coverage.stdout.log",
+        "stderr": "evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/coverage.stderr.log"
+      },
+      "failure_details": {
+        "kind": "process",
+        "summary": "Command exited with code 1.",
+        "output_excerpt": "stdout:\n---------|----------|---------|---------|-------------------\nAll files                              |    22.1 |    87.65 |   81.92 |    22.1 |                   \n Part-1A                               |       0 |        0 |       0 |       0 |                   \n  eslint.config.mjs                    |       0 |        0 |       0 |       0 | 1-8               \n Part-1A/.harness                      |       0 |        0 |       0 |       0 |                   \n  run.mjs                              |       0 |        0 |       0 |       0 | 1-1566            \n Part-1A/.harness/checks               |       0 |        0 |       0 |       0 |                   \n  syntax.mjs                           |       0 |        0 |       0 |       0 | 1-108             \n  verify-integrity.mjs                 |       0 |        0 |       0 |       0 | 1-663             \n ...1A/evidence/initial/implementation |       0 |        0 |       0 |       0 |                   \n  eslint.config.mjs                    |       0 |        0 |       0 |       0 | 1-8               \n ...vidence/initial/implementation/src |       0 |        0 |       0 |       0 |                   \n  server.ts                            |       0 |        0 |       0 |       0 | 1-42              \n .../initial/implementation/src/domain |       0 |        0 |       0 |       0 |                   \n  task.ts                              |       0 |        0 |       0 |       0 | 1-44              \n .../initial/implementation/src/errors |       0 |        0 |       0 |       0 |                   \n  api-error.ts                         |       0 |        0 |       0 |       0 | 1-64              \n ...ce/initial/implementation/src/http |       0 |        0 |       0 |       0 |                   \n  task-routes.ts                       |       0 |        0 |       0 |       0 | 1-147             \n ...ial/implementation/src/persistence |       0 |        0 |       0 |       0 |                   \n  json-task-store.ts                   |       0 |        0 |       0 |       0 | 1-263             \n ...nitial/implementation/src/services |       0 |        0 |       0 |       0 |                   \n  task-service.ts                      |       0 |        0 |       0 |       0 | 1-150             \n ...tial/implementation/src/validation |       0 |        0 |       0 |       0 |                   \n  task-validation.ts                   |       0 |        0 |       0 |       0 | 1-439             \n Part-1A/src                           |   88.09 |    66.66 |     100 |   88.09 |                   \n  server.ts                            |   88.09 |    66.66 |     100 |   88.09 | 38-42             \n Part-1A/src/domain                    |       0 |        0 |       0 |       0 |                   \n  task.ts                              |       0 |        0 |       0 |       0 | 1-44              \n Part-1A/src/errors                    |     100 |      100 |   84.61 |     100 |                   \n  api-error.ts                         |     100 |      100 |   84.61 |     100 |                   \n Part-1A/src/http                      |   98.63 |    91.11 |     100 |   98.63 |                   \n  task-routes.ts                       |   98.63 |    91.11 |     100 |   98.63 | 73,129            \n Part-1A/src/persistence               |   80.22 |    81.63 |     100 |   80.22 |                   \n  json-task-store.ts                   |   80.22 |    81.63 |     100 |   80.22 | ...36-238,243-258 \n Part-1A/src/services                  |   99.33 |    96.61 |     100 |   99.33 |                   \n  task-service.ts                      |   99.33 |    96.61 |     100 |   99.33 | 149               \n Part-1A/src/validation                |   96.12 |    92.46 |     100 |   96.12 |                   \n  task-validation.ts                   |   96.12 |    92.46 |     100 |   96.12 | ...13-215,300-305 \n---------------------------------------|---------|----------|---------|---------|-------------------\n\nstderr:\nERROR: Coverage for lines (22.1%) does not meet global threshold (90%)\nERROR: Coverage for statements (22.1%) does not meet global threshold (80%)\n"
+      }
+    },
+    {
+      "order": 9,
+      "check_id": "integrity",
+      "command": {
+        "executable": "node",
+        "args": [
+          ".harness/checks/verify-integrity.mjs"
+        ]
+      },
+      "tool_versions": {
+        "node": "v24.18.0",
+        "npm": "11.16.0",
+        "typescript": "6.0.3",
+        "@types/node": "24.19.2",
+        "eslint": "10.15.0",
+        "typescript-eslint": "8.73.0",
+        "c8": "12.0.0"
+      },
+      "started_at_utc": "2026-11-19T19:31:46.239Z",
+      "completed_at_utc": "2026-11-19T19:31:46.725Z",
+      "outcome": "PASS",
+      "exit_code": 0,
+      "logs": {
+        "stdout": "evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/integrity.stdout.log",
+        "stderr": "evidence/initial/runs/run-20261119T193131565Z-96265c2a-b2e3-4632-bbb1-c13481d664b0/logs/integrity.stderr.log"
+      }
+    }
+  ]
+}

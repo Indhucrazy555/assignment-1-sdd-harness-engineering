@@ -1,0 +1,44 @@
+Run: run-20261119T193250384Z-4dc0e8f2-44c0-4c5c-b4e7-54c91f99f0a7
+Phase: final
+Started: 2026-11-19T19:32:50.385Z
+Completed: 2026-11-19T19:33:02.405Z
+Outcome: FAIL
+
+1. syntax: PASS (exit 0)
+   Command: node .harness/checks/syntax.mjs
+   stdout: evidence/final/runs/run-20261119T193250384Z-4dc0e8f2-44c0-4c5c-b4e7-54c91f99f0a7/logs/syntax.stdout.log
+   stderr: evidence/final/runs/run-20261119T193250384Z-4dc0e8f2-44c0-4c5c-b4e7-54c91f99f0a7/logs/syntax.stderr.log
+2. lint: PASS (exit 0)
+   Command: npm.cmd run lint
+   stdout: evidence/final/runs/run-20261119T193250384Z-4dc0e8f2-44c0-4c5c-b4e7-54c91f99f0a7/logs/lint.stdout.log
+   stderr: evidence/final/runs/run-20261119T193250384Z-4dc0e8f2-44c0-4c5c-b4e7-54c91f99f0a7/logs/lint.stderr.log
+3. typescript: PASS (exit 0)
+   Command: npm.cmd run typecheck
+   stdout: evidence/final/runs/run-20261119T193250384Z-4dc0e8f2-44c0-4c5c-b4e7-54c91f99f0a7/logs/typescript.stdout.log
+   stderr: evidence/final/runs/run-20261119T193250384Z-4dc0e8f2-44c0-4c5c-b4e7-54c91f99f0a7/logs/typescript.stderr.log
+4. security-audit: PASS (exit 0)
+   Command: npm.cmd audit --audit-level=high
+   stdout: evidence/final/runs/run-20261119T193250384Z-4dc0e8f2-44c0-4c5c-b4e7-54c91f99f0a7/logs/security-audit.stdout.log
+   stderr: evidence/final/runs/run-20261119T193250384Z-4dc0e8f2-44c0-4c5c-b4e7-54c91f99f0a7/logs/security-audit.stderr.log
+5. unit-tests: PASS (exit 0)
+   Command: npm.cmd run test:unit
+   stdout: evidence/final/runs/run-20261119T193250384Z-4dc0e8f2-44c0-4c5c-b4e7-54c91f99f0a7/logs/unit-tests.stdout.log
+   stderr: evidence/final/runs/run-20261119T193250384Z-4dc0e8f2-44c0-4c5c-b4e7-54c91f99f0a7/logs/unit-tests.stderr.log
+6. integration-tests: FAIL (exit 1)
+   Command: npm.cmd run test:integration
+   stdout: evidence/final/runs/run-20261119T193250384Z-4dc0e8f2-44c0-4c5c-b4e7-54c91f99f0a7/logs/integration-tests.stdout.log
+   stderr: evidence/final/runs/run-20261119T193250384Z-4dc0e8f2-44c0-4c5c-b4e7-54c91f99f0a7/logs/integration-tests.stderr.log
+   Details: Command exited with code 1.
+7. http-contract-tests: PASS (exit 0)
+   Command: npm.cmd run test:contract
+   stdout: evidence/final/runs/run-20261119T193250384Z-4dc0e8f2-44c0-4c5c-b4e7-54c91f99f0a7/logs/http-contract-tests.stdout.log
+   stderr: evidence/final/runs/run-20261119T193250384Z-4dc0e8f2-44c0-4c5c-b4e7-54c91f99f0a7/logs/http-contract-tests.stderr.log
+8. coverage: FAIL (exit 1)
+   Command: npm.cmd run test:coverage
+   stdout: evidence/final/runs/run-20261119T193250384Z-4dc0e8f2-44c0-4c5c-b4e7-54c91f99f0a7/logs/coverage.stdout.log
+   stderr: evidence/final/runs/run-20261119T193250384Z-4dc0e8f2-44c0-4c5c-b4e7-54c91f99f0a7/logs/coverage.stderr.log
+   Details: Command exited with code 1.
+9. integrity: PASS (exit 0)
+   Command: node .harness/checks/verify-integrity.mjs
+   stdout: evidence/final/runs/run-20261119T193250384Z-4dc0e8f2-44c0-4c5c-b4e7-54c91f99f0a7/logs/integrity.stdout.log
+   stderr: evidence/final/runs/run-20261119T193250384Z-4dc0e8f2-44c0-4c5c-b4e7-54c91f99f0a7/logs/integrity.stderr.log

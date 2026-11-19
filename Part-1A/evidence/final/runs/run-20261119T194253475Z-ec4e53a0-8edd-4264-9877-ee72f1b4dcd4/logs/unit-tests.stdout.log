@@ -1,0 +1,28 @@
+
+> smart-todo-management-api@1.0.0 test:unit
+> node --experimental-strip-types --test tests/unit/task-service.test.ts tests/unit/task-validation.test.ts
+
+✔ create generates immutable identifiers and creation time with documented defaults (24.0597ms)
+✔ retrieve returns the complete task created by the service (0.7069ms)
+✔ patch changes supplied fields and preserves omitted fields (1.6185ms)
+✔ delete removes the task and later retrieval reports it as unknown (2.3075ms)
+✔ unknown IDs are not treated as existing tasks (0.8262ms)
+✔ every allowed status can transition to every other allowed status (1.6912ms)
+✔ list filters combine with AND and require every tag case-insensitively (0.6954ms)
+✔ list returns an empty collection when filters match no tasks (0.2741ms)
+✔ list uses creation-time and ID tie-breakers for default and priority order (0.4531ms)
+✔ create validation requires a JSON object and required fields (17.559ms)
+✔ field limits count Unicode code points and enforce enums and tag rules (2.4259ms)
+✔ due dates accept calendar dates and null, but reject impossible or datetime values (3.3979ms)
+✔ patch rejects empty objects, immutable fields, and unknown fields (0.79ms)
+✔ create rejects immutable and unknown fields (0.7863ms)
+✔ query validation accepts documented filters and rejects repeated, blank, unknown, or invalid values (1.6228ms)
+✔ validation details are ordered by field and then issue (2.097ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 260.1441

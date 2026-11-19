@@ -1,0 +1,259 @@
+{
+  "run_id": "run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4",
+  "phase": "final",
+  "started_at_utc": "2026-11-19T19:42:53.476Z",
+  "completed_at_utc": "2026-11-19T19:43:12.604Z",
+  "outcome": "PASS",
+  "checks": [
+    {
+      "order": 1,
+      "check_id": "syntax",
+      "command": {
+        "executable": "node",
+        "args": [
+          ".harness/checks/syntax.mjs"
+        ]
+      },
+      "tool_versions": {
+        "node": "v24.18.0",
+        "npm": "11.16.0",
+        "typescript": "6.0.3",
+        "@types/node": "24.19.2",
+        "eslint": "10.15.0",
+        "typescript-eslint": "8.73.0",
+        "c8": "12.0.0"
+      },
+      "started_at_utc": "2026-11-19T19:42:54.090Z",
+      "completed_at_utc": "2026-11-19T19:42:54.540Z",
+      "outcome": "PASS",
+      "exit_code": 0,
+      "logs": {
+        "stdout": "evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/syntax.stdout.log",
+        "stderr": "evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/syntax.stderr.log"
+      }
+    },
+    {
+      "order": 2,
+      "check_id": "lint",
+      "command": {
+        "executable": "npm.cmd",
+        "args": [
+          "run",
+          "lint"
+        ]
+      },
+      "tool_versions": {
+        "node": "v24.18.0",
+        "npm": "11.16.0",
+        "typescript": "6.0.3",
+        "@types/node": "24.19.2",
+        "eslint": "10.15.0",
+        "typescript-eslint": "8.73.0",
+        "c8": "12.0.0"
+      },
+      "started_at_utc": "2026-11-19T19:42:54.540Z",
+      "completed_at_utc": "2026-11-19T19:42:57.231Z",
+      "outcome": "PASS",
+      "exit_code": 0,
+      "logs": {
+        "stdout": "evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/lint.stdout.log",
+        "stderr": "evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/lint.stderr.log"
+      }
+    },
+    {
+      "order": 3,
+      "check_id": "typescript",
+      "command": {
+        "executable": "npm.cmd",
+        "args": [
+          "run",
+          "typecheck"
+        ]
+      },
+      "tool_versions": {
+        "node": "v24.18.0",
+        "npm": "11.16.0",
+        "typescript": "6.0.3",
+        "@types/node": "24.19.2",
+        "eslint": "10.15.0",
+        "typescript-eslint": "8.73.0",
+        "c8": "12.0.0"
+      },
+      "started_at_utc": "2026-11-19T19:42:57.231Z",
+      "completed_at_utc": "2026-11-19T19:42:59.072Z",
+      "outcome": "PASS",
+      "exit_code": 0,
+      "logs": {
+        "stdout": "evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/typescript.stdout.log",
+        "stderr": "evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/typescript.stderr.log"
+      }
+    },
+    {
+      "order": 4,
+      "check_id": "security-audit",
+      "command": {
+        "executable": "npm.cmd",
+        "args": [
+          "audit",
+          "--audit-level=high"
+        ]
+      },
+      "tool_versions": {
+        "node": "v24.18.0",
+        "npm": "11.16.0",
+        "typescript": "6.0.3",
+        "@types/node": "24.19.2",
+        "eslint": "10.15.0",
+        "typescript-eslint": "8.73.0",
+        "c8": "12.0.0"
+      },
+      "started_at_utc": "2026-11-19T19:42:59.072Z",
+      "completed_at_utc": "2026-11-19T19:43:01.855Z",
+      "outcome": "PASS",
+      "exit_code": 0,
+      "logs": {
+        "stdout": "evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/security-audit.stdout.log",
+        "stderr": "evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/security-audit.stderr.log"
+      }
+    },
+    {
+      "order": 5,
+      "check_id": "unit-tests",
+      "command": {
+        "executable": "npm.cmd",
+        "args": [
+          "run",
+          "test:unit"
+        ]
+      },
+      "tool_versions": {
+        "node": "v24.18.0",
+        "npm": "11.16.0",
+        "typescript": "6.0.3",
+        "@types/node": "24.19.2",
+        "eslint": "10.15.0",
+        "typescript-eslint": "8.73.0",
+        "c8": "12.0.0"
+      },
+      "started_at_utc": "2026-11-19T19:43:01.855Z",
+      "completed_at_utc": "2026-11-19T19:43:03.657Z",
+      "outcome": "PASS",
+      "exit_code": 0,
+      "logs": {
+        "stdout": "evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/unit-tests.stdout.log",
+        "stderr": "evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/unit-tests.stderr.log"
+      }
+    },
+    {
+      "order": 6,
+      "check_id": "integration-tests",
+      "command": {
+        "executable": "npm.cmd",
+        "args": [
+          "run",
+          "test:integration"
+        ]
+      },
+      "tool_versions": {
+        "node": "v24.18.0",
+        "npm": "11.16.0",
+        "typescript": "6.0.3",
+        "@types/node": "24.19.2",
+        "eslint": "10.15.0",
+        "typescript-eslint": "8.73.0",
+        "c8": "12.0.0"
+      },
+      "started_at_utc": "2026-11-19T19:43:03.657Z",
+      "completed_at_utc": "2026-11-19T19:43:05.332Z",
+      "outcome": "PASS",
+      "exit_code": 0,
+      "logs": {
+        "stdout": "evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/integration-tests.stdout.log",
+        "stderr": "evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/integration-tests.stderr.log"
+      }
+    },
+    {
+      "order": 7,
+      "check_id": "http-contract-tests",
+      "command": {
+        "executable": "npm.cmd",
+        "args": [
+          "run",
+          "test:contract"
+        ]
+      },
+      "tool_versions": {
+        "node": "v24.18.0",
+        "npm": "11.16.0",
+        "typescript": "6.0.3",
+        "@types/node": "24.19.2",
+        "eslint": "10.15.0",
+        "typescript-eslint": "8.73.0",
+        "c8": "12.0.0"
+      },
+      "started_at_utc": "2026-11-19T19:43:05.333Z",
+      "completed_at_utc": "2026-11-19T19:43:07.812Z",
+      "outcome": "PASS",
+      "exit_code": 0,
+      "logs": {
+        "stdout": "evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/http-contract-tests.stdout.log",
+        "stderr": "evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/http-contract-tests.stderr.log"
+      }
+    },
+    {
+      "order": 8,
+      "check_id": "coverage",
+      "command": {
+        "executable": "npm.cmd",
+        "args": [
+          "run",
+          "test:coverage"
+        ]
+      },
+      "tool_versions": {
+        "node": "v24.18.0",
+        "npm": "11.16.0",
+        "typescript": "6.0.3",
+        "@types/node": "24.19.2",
+        "eslint": "10.15.0",
+        "typescript-eslint": "8.73.0",
+        "c8": "12.0.0"
+      },
+      "started_at_utc": "2026-11-19T19:43:07.812Z",
+      "completed_at_utc": "2026-11-19T19:43:11.911Z",
+      "outcome": "PASS",
+      "exit_code": 0,
+      "logs": {
+        "stdout": "evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/coverage.stdout.log",
+        "stderr": "evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/coverage.stderr.log"
+      }
+    },
+    {
+      "order": 9,
+      "check_id": "integrity",
+      "command": {
+        "executable": "node",
+        "args": [
+          ".harness/checks/verify-integrity.mjs"
+        ]
+      },
+      "tool_versions": {
+        "node": "v24.18.0",
+        "npm": "11.16.0",
+        "typescript": "6.0.3",
+        "@types/node": "24.19.2",
+        "eslint": "10.15.0",
+        "typescript-eslint": "8.73.0",
+        "c8": "12.0.0"
+      },
+      "started_at_utc": "2026-11-19T19:43:11.911Z",
+      "completed_at_utc": "2026-11-19T19:43:12.604Z",
+      "outcome": "PASS",
+      "exit_code": 0,
+      "logs": {
+        "stdout": "evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/integrity.stdout.log",
+        "stderr": "evidence/final/runs/run-20261119T194253475Z-ec4e53a0-8edd-4264-9877-ee72f1b4dcd4/logs/integrity.stderr.log"
+      }
+    }
+  ]
+}

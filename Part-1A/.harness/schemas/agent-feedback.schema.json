@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Agent Failure Feedback",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["feedback_version", "run_id", "generated_at_utc", "failures"],
+  "properties": {
+    "feedback_version": {
+      "const": 1
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at_utc": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "Z$"
+    },
+    "failures": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/failure"
+      }
+    }
+  },
+  "$defs": {
+    "command": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["executable", "args"],
+      "properties": {
+        "executable": {
+          "type": "string",
+          "minLength": 1
+        },
+        "args": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "failure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "check_id",
+        "outcome",
+        "command",
+        "expected_reference",
+        "expected_behavior",
+        "observed_behavior",
+        "evidence"
+      ],
+      "properties": {
+        "check_id": {
+          "enum": [
+            "syntax",
+            "lint",
+            "typescript",
+            "security-audit",
+            "unit-tests",
+            "integration-tests",
+            "http-contract-tests",
+            "coverage",
+            "integrity"
+          ]
+        },
+        "outcome": {
+          "const": "FAIL"
+        },
+        "failure_kind": {
+          "enum": [
+            "assertion",
+            "process",
+            "audit",
+            "integrity",
+            "timeout",
+            "dependency",
+            "other"
+          ]
+        },
+        "command": {
+          "$ref": "#/$defs/command"
+        },
+        "expected_reference": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "expected_behavior": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observed_behavior": {
+          "type": "string",
+          "minLength": 1
+        },
+        "failed_test_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "check_result",
+            "stdout_log",
+            "stderr_log",
+            "failure_excerpt"
+          ],
+          "properties": {
+            "check_result": {
+              "type": "string",
+              "minLength": 1
+            },
+            "stdout_log": {
+              "type": "string",
+              "minLength": 1
+            },
+            "stderr_log": {
+              "type": "string",
+              "minLength": 1
+            },
+            "failure_excerpt": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  }
+}

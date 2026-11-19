@@ -1,0 +1,26 @@
+{
+  "name": "smart-todo-management-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "lint": "eslint \"src/**/*.ts\" \"tests/**/*.ts\" --no-error-on-unmatched-pattern --max-warnings=0",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test:unit": "node --experimental-strip-types --test tests/unit/task-service.test.ts tests/unit/task-validation.test.ts",
+    "test:integration": "node --experimental-strip-types --test tests/integration/json-task-store.test.ts",
+    "test:contract": "node --experimental-strip-types --test tests/contract/tasks.http.contract.test.ts",
+    "test:coverage": "c8 --all --check-coverage --statements 80 --branches 80 node --experimental-strip-types --test tests/contract/tasks.http.contract.test.ts tests/integration/json-task-store.test.ts tests/unit/task-service.test.ts tests/unit/task-validation.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "c8": "12.0.0",
+    "eslint": "10.15.0",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.73.0"
+  }
+}

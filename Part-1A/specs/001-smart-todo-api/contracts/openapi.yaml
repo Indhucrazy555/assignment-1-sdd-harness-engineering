@@ -1,0 +1,356 @@
+openapi: 3.1.1
+info:
+  title: Smart Todo Management API
+  version: 1.0.0
+  description: Deterministic, loopback-only task management API.
+servers:
+  - url: http://127.0.0.1:3000
+    description: Local computer only
+security: []
+paths:
+  /tasks:
+    post:
+      operationId: createTask
+      summary: Create a task
+      requestBody:
+        required: true
+        description: JSON body must not exceed 65,536 UTF-8 bytes.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTaskInput'
+      responses:
+        '201':
+          description: Task created and persisted
+          headers:
+            Location:
+              required: true
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '413':
+          $ref: '#/components/responses/PayloadTooLarge'
+        '415':
+          $ref: '#/components/responses/UnsupportedMediaType'
+        '500':
+          $ref: '#/components/responses/ServerError'
+    get:
+      operationId: listTasks
+      summary: List and filter tasks
+      description: Filters combine with AND. Without sort, order by createdAt then id ascending.
+      parameters:
+        - name: status
+          in: query
+          description: Exact status enum value; combines with other filters using AND.
+          schema:
+            $ref: '#/components/schemas/TaskStatus'
+        - name: priority
+          in: query
+          description: Exact priority enum value; combines with other filters using AND.
+          schema:
+            $ref: '#/components/schemas/TaskPriority'
+        - name: tags
+          in: query
+          description: Comma-separated list of 1-10 trimmed tags (1-30 code points each). Every tag must match, case-insensitively; duplicate tags ignoring case are invalid.
+          style: form
+          explode: false
+          schema:
+            type: string
+            description: Empty values and repeated query keys are invalid.
+        - name: sort
+          in: query
+          description: '`priority` sorts high-to-low, then createdAt and id ascending.'
+          schema:
+            type: string
+            enum: [priority]
+      responses:
+        '200':
+          description: Matching tasks in deterministic order
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskList'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '500':
+          $ref: '#/components/responses/ServerError'
+  /tasks/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+          pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+    get:
+      operationId: getTask
+      summary: Retrieve a task
+      responses:
+        '200':
+          description: Task found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/ServerError'
+    patch:
+      operationId: updateTask
+      summary: Partially update a task
+      requestBody:
+        required: true
+        description: JSON body must not exceed 65,536 UTF-8 bytes.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTaskInput'
+      responses:
+        '200':
+          description: Task updated and persisted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '413':
+          $ref: '#/components/responses/PayloadTooLarge'
+        '415':
+          $ref: '#/components/responses/UnsupportedMediaType'
+        '500':
+          $ref: '#/components/responses/ServerError'
+    delete:
+      operationId: deleteTask
+      summary: Delete a task
+      responses:
+        '204':
+          description: Task deleted; response body is empty
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '405':
+          $ref: '#/components/responses/MethodNotAllowed'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/ServerError'
+components:
+  schemas:
+    TaskPriority:
+      type: string
+      enum: [low, medium, high]
+    TaskStatus:
+      type: string
+      enum: [pending, in_progress, completed]
+    Task:
+      type: object
+      additionalProperties: false
+      required: [id, title, description, priority, status, tags, createdAt, dueDate]
+      properties:
+        id:
+          type: string
+          format: uuid
+          pattern: '^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$'
+        title:
+          type: string
+          minLength: 1
+          maxLength: 100
+          description: Trimmed before storage; whitespace-only values are invalid.
+        description:
+          type: string
+          maxLength: 2000
+        priority:
+          $ref: '#/components/schemas/TaskPriority'
+        status:
+          $ref: '#/components/schemas/TaskStatus'
+        tags:
+          type: array
+          maxItems: 10
+          description: Tags are trimmed, non-empty and 1-30 Unicode code points; case-insensitive duplicates are invalid.
+          items:
+            type: string
+            minLength: 1
+            maxLength: 30
+        createdAt:
+          type: string
+          format: date-time
+          pattern: '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$'
+        dueDate:
+          type: [string, 'null']
+          format: date
+    TaskList:
+      type: object
+      additionalProperties: false
+      required: [tasks, count]
+      properties:
+        tasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Task'
+        count:
+          type: integer
+          minimum: 0
+    CreateTaskInput:
+      type: object
+      additionalProperties: false
+      required: [title, description, priority]
+      properties:
+        title:
+          type: string
+          minLength: 1
+          maxLength: 100
+          pattern: '.*\S.*'
+          description: Trimmed before storage; whitespace-only values are invalid.
+        description:
+          type: string
+          maxLength: 2000
+        priority:
+          $ref: '#/components/schemas/TaskPriority'
+        status:
+          allOf:
+            - $ref: '#/components/schemas/TaskStatus'
+          default: pending
+        tags:
+          type: array
+          maxItems: 10
+          default: []
+          description: Tags are trimmed, non-empty and 1-30 Unicode code points; case-insensitive duplicates are invalid.
+          items:
+            type: string
+            minLength: 1
+            maxLength: 30
+        dueDate:
+          type: [string, 'null']
+          format: date
+          default: null
+    UpdateTaskInput:
+      type: object
+      additionalProperties: false
+      minProperties: 1
+      properties:
+        title:
+          type: string
+          minLength: 1
+          maxLength: 100
+          pattern: '.*\S.*'
+          description: Trimmed before storage; whitespace-only values are invalid.
+        description:
+          type: string
+          maxLength: 2000
+        priority:
+          $ref: '#/components/schemas/TaskPriority'
+        status:
+          $ref: '#/components/schemas/TaskStatus'
+        tags:
+          type: array
+          maxItems: 10
+          description: Tags are trimmed, non-empty and 1-30 Unicode code points; case-insensitive duplicates are invalid.
+          items:
+            type: string
+            minLength: 1
+            maxLength: 30
+        dueDate:
+          type: [string, 'null']
+          format: date
+    ErrorDetail:
+      type: object
+      additionalProperties: false
+      required: [field, issue]
+      properties:
+        field:
+          type: string
+        issue:
+          type: string
+    ErrorResponse:
+      type: object
+      description: >-
+        Exact code/message pairs are INVALID_JSON/"Request body must be valid JSON.",
+        VALIDATION_ERROR/"Request validation failed.", INVALID_TASK_ID/"Task ID must be a UUID.",
+        TASK_NOT_FOUND/"Task not found.", ROUTE_NOT_FOUND/"Route not found.",
+        METHOD_NOT_ALLOWED/"Method not allowed.", PAYLOAD_TOO_LARGE/"Request body exceeds 65536 bytes.",
+        UNSUPPORTED_MEDIA_TYPE/"Content-Type must be application/json.",
+        STORAGE_ERROR/"Task storage operation failed.", and INTERNAL_ERROR/"Internal server error.".
+        Validation details are ordered by field and then issue.
+      additionalProperties: false
+      required: [error]
+      properties:
+        error:
+          type: object
+          additionalProperties: false
+          required: [code, message]
+          properties:
+            code:
+              type: string
+              enum:
+                - INVALID_JSON
+                - VALIDATION_ERROR
+                - INVALID_TASK_ID
+                - TASK_NOT_FOUND
+                - ROUTE_NOT_FOUND
+                - METHOD_NOT_ALLOWED
+                - PAYLOAD_TOO_LARGE
+                - UNSUPPORTED_MEDIA_TYPE
+                - STORAGE_ERROR
+                - INTERNAL_ERROR
+            message:
+              type: string
+            details:
+              type: array
+              items:
+                $ref: '#/components/schemas/ErrorDetail'
+  responses:
+    BadRequest:
+      description: 400 errors use INVALID_JSON, VALIDATION_ERROR, or INVALID_TASK_ID with the exact message in ErrorResponse.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    NotFound:
+      description: A task lookup or deletion uses TASK_NOT_FOUND; an unknown route uses ROUTE_NOT_FOUND.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    PayloadTooLarge:
+      description: PAYLOAD_TOO_LARGE; message "Request body exceeds 65536 bytes."
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    UnsupportedMediaType:
+      description: UNSUPPORTED_MEDIA_TYPE; message "Content-Type must be application/json."
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    MethodNotAllowed:
+      description: Method not allowed; code METHOD_NOT_ALLOWED and message "Method not allowed."
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    ServerError:
+      description: STORAGE_ERROR or INTERNAL_ERROR with the exact message in ErrorResponse.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'

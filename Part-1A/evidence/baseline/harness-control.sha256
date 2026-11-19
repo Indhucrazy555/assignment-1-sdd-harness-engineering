@@ -1,0 +1,7 @@
+802b6dfcbd978c3d2588066fbef7479c12ef7ba7392c406fe8a75ec825a5ee6c  .harness/checks/syntax.mjs
+072d3388881ff39d3314c254e25fb18286fa89a3102a7ee50a82359bfabef288  .harness/checks/verify-integrity.mjs
+72ab6336fe454bf4d74bcc86b8c3d1441503009fc9938a1057145c7a608bda3c  .harness/policy.json
+cd23871834ae5086712936724365bc44438c81fd0c9906e29f13e34385913959  .harness/run.mjs
+793843cf9f99c8b05d3f594b384aecb1d2a2436e7fe214bb5ea07ae1dd969d10  .harness/schemas/agent-feedback.schema.json
+f4072d889de0428e82fd97f1157093742f3638f66df5d25e50a7077e65c2f86f  .harness/schemas/check-result.schema.json
+f05102e078e4cdd3066e28397d1a6a14796fe50e0da6800424dd20325d8db0a7  .harness/schemas/human-decision.schema.json

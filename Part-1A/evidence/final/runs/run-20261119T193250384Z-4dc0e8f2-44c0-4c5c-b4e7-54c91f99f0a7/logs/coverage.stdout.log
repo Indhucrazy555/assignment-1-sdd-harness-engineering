@@ -1,0 +1,122 @@
+
+> smart-todo-management-api@1.0.0 test:coverage
+> c8 --all --check-coverage --statements 80 --branches 80 node --experimental-strip-types --test tests/contract/tasks.http.contract.test.ts tests/integration/json-task-store.test.ts tests/unit/task-service.test.ts tests/unit/task-validation.test.ts
+
+✔ HTTP CRUD returns exact success statuses, Location, complete tasks, and empty 204 body (293.2269ms)
+✔ valid unknown task IDs return 404 for retrieval and deletion (21.4716ms)
+✔ list filters and priority sorting return the matching tasks (152.2263ms)
+✔ list combines supported filters with AND and reports exact counts (114.2117ms)
+✔ list rejects repeated query keys and invalid filter or sorting values (130.7491ms)
+✔ malformed JSON and invalid fields use the specified error envelopes without mutation (45.4338ms)
+✔ malformed storage returns the specified HTTP storage error (13.1241ms)
+✔ media type and UTF-8 request-size errors use their specified statuses (52.6209ms)
+✔ unsupported methods, unknown routes, and malformed IDs use exact error contracts (15.255ms)
+✔ production server binds only to IPv4 loopback (6.2779ms)
+✔ a missing store loads as an empty collection without creating task data (52.4905ms)
+✔ saving and loading a JSON task collection preserves every task field (35.1608ms)
+✔ a new service and store instance restore saved tasks after restart (42.9354ms)
+✔ malformed and invalid collections fail without changing their stored bytes (34.074ms)
+✖ read and write failures are surfaced and do not alter the blocking file (2.8469ms)
+✔ a failed save leaves the previous valid task collection unchanged (18.8253ms)
+✔ overlapping creates preserve receipt order and do not lose successful mutations (44.1713ms)
+✔ a failed queued mutation does not prevent a later mutation from succeeding (31.7435ms)
+✔ create generates immutable identifiers and creation time with documented defaults (30.4845ms)
+✔ retrieve returns the complete task created by the service (0.9709ms)
+✔ patch changes supplied fields and preserves omitted fields (0.9503ms)
+✔ delete removes the task and later retrieval reports it as unknown (1.8431ms)
+✔ unknown IDs are not treated as existing tasks (0.706ms)
+✔ every allowed status can transition to every other allowed status (6.1215ms)
+✔ list filters combine with AND and require every tag case-insensitively (1.9385ms)
+✔ list returns an empty collection when filters match no tasks (0.5938ms)
+✔ list uses creation-time and ID tie-breakers for default and priority order (1.1004ms)
+✔ create validation requires a JSON object and required fields (25.4431ms)
+✔ field limits count Unicode code points and enforce enums and tag rules (5.761ms)
+✔ due dates accept calendar dates and null, but reject impossible or datetime values (3.9412ms)
+✔ patch rejects empty objects, immutable fields, and unknown fields (1.4573ms)
+✔ create rejects immutable and unknown fields (0.7256ms)
+✔ query validation accepts documented filters and rejects repeated, blank, unknown, or invalid values (2.4082ms)
+✔ validation details are ordered by field and then issue (3.8928ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 33
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1112.063
+
+✖ failing tests:
+
+test at tests\integration\json-task-store.test.ts:107:1
+✖ read and write failures are surfaced and do not alter the blocking file (2.8469ms)
+  Error: ENOENT: no such file or directory, open 'C:\Users\DINESH~1\AppData\Local\Temp\smart-todo-store-FYKAYb\nested\not-a-directory'
+      at async open (node:internal/fs/promises:640:25)
+      at async writeFile (node:internal/fs/promises:1260:14)
+      at async file:///F:/Workspace/assignment-1-sdd-harness-engineering/Part-1A/tests/integration/json-task-store.test.ts:112:5
+      at async withTemporaryStore (file:///F:/Workspace/assignment-1-sdd-harness-engineering/Part-1A/tests/integration/json-task-store.test.ts:32:5)
+      at async TestContext.<anonymous> (file:///F:/Workspace/assignment-1-sdd-harness-engineering/Part-1A/tests/integration/json-task-store.test.ts:108:3)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    errno: -4058,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: 'C:\\Users\\DINESH~1\\AppData\\Local\\Temp\\smart-todo-store-FYKAYb\\nested\\not-a-directory'
+  }
+---------------------------------------|---------|----------|---------|---------|-------------------
+File                                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------------------------|---------|----------|---------|---------|-------------------
+All files                              |   17.69 |    85.58 |   74.72 |   17.69 |                   
+ Part-1A                               |       0 |        0 |       0 |       0 |                   
+  eslint.config.mjs                    |       0 |        0 |       0 |       0 | 1-8               
+ Part-1A/.harness                      |       0 |        0 |       0 |       0 |                   
+  run.mjs                              |       0 |        0 |       0 |       0 | 1-1566            
+ Part-1A/.harness/checks               |       0 |        0 |       0 |       0 |                   
+  syntax.mjs                           |       0 |        0 |       0 |       0 | 1-108             
+  verify-integrity.mjs                 |       0 |        0 |       0 |       0 | 1-663             
+ Part-1A/evidence/final/implementation |       0 |        0 |       0 |       0 |                   
+  eslint.config.mjs                    |       0 |        0 |       0 |       0 | 1-8               
+ .../evidence/final/implementation/src |       0 |        0 |       0 |       0 |                   
+  server.ts                            |       0 |        0 |       0 |       0 | 1-42              
+ ...ce/final/implementation/src/domain |       0 |        0 |       0 |       0 |                   
+  task.ts                              |       0 |        0 |       0 |       0 | 1-44              
+ ...ce/final/implementation/src/errors |       0 |        0 |       0 |       0 |                   
+  api-error.ts                         |       0 |        0 |       0 |       0 | 1-64              
+ ...ence/final/implementation/src/http |       0 |        0 |       0 |       0 |                   
+  task-routes.ts                       |       0 |        0 |       0 |       0 | 1-147             
+ ...nal/implementation/src/persistence |       0 |        0 |       0 |       0 |                   
+  json-task-store.ts                   |       0 |        0 |       0 |       0 | 1-263             
+ .../final/implementation/src/services |       0 |        0 |       0 |       0 |                   
+  task-service.ts                      |       0 |        0 |       0 |       0 | 1-150             
+ ...inal/implementation/src/validation |       0 |        0 |       0 |       0 |                   
+  task-validation.ts                   |       0 |        0 |       0 |       0 | 1-439             
+ ...1A/evidence/initial/implementation |       0 |        0 |       0 |       0 |                   
+  eslint.config.mjs                    |       0 |        0 |       0 |       0 | 1-8               
+ ...vidence/initial/implementation/src |       0 |        0 |       0 |       0 |                   
+  server.ts                            |       0 |        0 |       0 |       0 | 1-42              
+ .../initial/implementation/src/domain |       0 |        0 |       0 |       0 |                   
+  task.ts                              |       0 |        0 |       0 |       0 | 1-44              
+ .../initial/implementation/src/errors |       0 |        0 |       0 |       0 |                   
+  api-error.ts                         |       0 |        0 |       0 |       0 | 1-64              
+ ...ce/initial/implementation/src/http |       0 |        0 |       0 |       0 |                   
+  task-routes.ts                       |       0 |        0 |       0 |       0 | 1-147             
+ ...ial/implementation/src/persistence |       0 |        0 |       0 |       0 |                   
+  json-task-store.ts                   |       0 |        0 |       0 |       0 | 1-263             
+ ...nitial/implementation/src/services |       0 |        0 |       0 |       0 |                   
+  task-service.ts                      |       0 |        0 |       0 |       0 | 1-150             
+ ...tial/implementation/src/validation |       0 |        0 |       0 |       0 |                   
+  task-validation.ts                   |       0 |        0 |       0 |       0 | 1-439             
+ Part-1A/src                           |   88.09 |    66.66 |     100 |   88.09 |                   
+  server.ts                            |   88.09 |    66.66 |     100 |   88.09 | 38-42             
+ Part-1A/src/domain                    |       0 |        0 |       0 |       0 |                   
+  task.ts                              |       0 |        0 |       0 |       0 | 1-44              
+ Part-1A/src/errors                    |     100 |      100 |   84.61 |     100 |                   
+  api-error.ts                         |     100 |      100 |   84.61 |     100 |                   
+ Part-1A/src/http                      |   98.63 |    91.11 |     100 |   98.63 |                   
+  task-routes.ts                       |   98.63 |    91.11 |     100 |   98.63 | 73,129            
+ Part-1A/src/persistence               |   80.22 |    81.63 |     100 |   80.22 |                   
+  json-task-store.ts                   |   80.22 |    81.63 |     100 |   80.22 | ...36-238,243-258 
+ Part-1A/src/services                  |   99.33 |    96.61 |     100 |   99.33 |                   
+  task-service.ts                      |   99.33 |    96.61 |     100 |   99.33 | 149               
+ Part-1A/src/validation                |   96.12 |    92.46 |     100 |   96.12 |                   
+  task-validation.ts                   |   96.12 |    92.46 |     100 |   96.12 | ...13-215,300-305 
+---------------------------------------|---------|----------|---------|---------|-------------------

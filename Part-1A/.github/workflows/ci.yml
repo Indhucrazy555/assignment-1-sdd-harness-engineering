@@ -1,0 +1,66 @@
+name: Smart Todo API CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+
+      - name: Install policy npm version
+        id: npm
+        run: npm install --global npm@11.16.0
+
+      - name: Install dependencies
+        id: install
+        if: ${{ steps.npm.outcome == 'success' }}
+        run: npm ci
+
+      - name: Syntax
+        if: ${{ always() && steps.install.outcome == 'success' }}
+        run: node .harness/checks/syntax.mjs
+
+      - name: Lint
+        if: ${{ always() && steps.install.outcome == 'success' }}
+        run: npm run lint
+
+      - name: TypeScript
+        if: ${{ always() && steps.install.outcome == 'success' }}
+        run: npm run typecheck
+
+      - name: Security audit
+        if: ${{ always() && steps.install.outcome == 'success' }}
+        run: npm audit --audit-level=high
+
+      - name: Unit tests
+        if: ${{ always() && steps.install.outcome == 'success' }}
+        run: npm run test:unit
+
+      - name: Integration tests
+        if: ${{ always() && steps.install.outcome == 'success' }}
+        run: npm run test:integration
+
+      - name: HTTP contract tests
+        if: ${{ always() && steps.install.outcome == 'success' }}
+        run: npm run test:contract
+
+      - name: Coverage
+        if: ${{ always() && steps.install.outcome == 'success' }}
+        run: npm run test:coverage
+
+      - name: Integrity
+        if: ${{ always() && steps.install.outcome == 'success' }}
+        run: node .harness/checks/verify-integrity.mjs

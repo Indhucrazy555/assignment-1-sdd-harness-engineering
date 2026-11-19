@@ -1,0 +1,22 @@
+
+> smart-todo-management-api@1.0.0 test:contract
+> node --experimental-strip-types --test tests/contract/tasks.http.contract.test.ts
+
+✔ HTTP CRUD returns exact success statuses, Location, complete tasks, and empty 204 body (366.0829ms)
+✔ valid unknown task IDs return 404 for retrieval and deletion (23.3105ms)
+✔ list filters and priority sorting return the matching tasks (248.3168ms)
+✔ list combines supported filters with AND and reports exact counts (329.1405ms)
+✔ list rejects repeated query keys and invalid filter or sorting values (183.032ms)
+✔ malformed JSON and invalid fields use the specified error envelopes without mutation (20.8887ms)
+✔ malformed storage returns the specified HTTP storage error (17.6894ms)
+✔ media type and UTF-8 request-size errors use their specified statuses (60.8401ms)
+✔ unsupported methods, unknown routes, and malformed IDs use exact error contracts (25.1014ms)
+✔ production server binds only to IPv4 loopback (6.8862ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1695.0692

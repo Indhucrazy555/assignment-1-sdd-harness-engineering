@@ -1,0 +1,4 @@
+44e4cf94e138a078fe9794b31983454be133ba79c3dbff0f49316dd81d857617  package-lock.json
+88a7f37475af143daecf20a048e4a8a7b0936f8a73ddb4b925d12de9f33a606c  package.json#scripts
+5f436228f7fdc6d7b822a83d347387a5cbe3c7293e939407d8012e069eaa31e3  specs/001-smart-todo-api/contracts/openapi.yaml
+182346cb57e5644be4e2707836252b88bed1c1da8ec2505bca9cabd00746e9ea  specs/001-smart-todo-api/spec.md

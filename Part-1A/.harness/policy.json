@@ -1,0 +1,136 @@
+{
+  "policyVersion": 1,
+  "projectRoot": ".",
+  "supportedVersions": {
+    "node": ">=24 <25",
+    "npm": "11.16.0",
+    "typescript": "6.0.3",
+    "@types/node": "24.19.2",
+    "eslint": "10.15.0",
+    "typescript-eslint": "8.73.0",
+    "c8": "12.0.0"
+  },
+  "executableResolution": {
+    "npm": {
+      "windows": "npm.cmd",
+      "other": "npm"
+    }
+  },
+  "continueAfterFailure": true,
+  "missingCheckOutcome": "BLOCKED",
+  "checks": [
+    {
+      "order": 1,
+      "id": "syntax",
+      "command": {
+        "executable": "node",
+        "args": [".harness/checks/syntax.mjs"]
+      }
+    },
+    {
+      "order": 2,
+      "id": "lint",
+      "command": {
+        "executable": "npm",
+        "args": ["run", "lint"]
+      }
+    },
+    {
+      "order": 3,
+      "id": "typescript",
+      "command": {
+        "executable": "npm",
+        "args": ["run", "typecheck"]
+      }
+    },
+    {
+      "order": 4,
+      "id": "security-audit",
+      "command": {
+        "executable": "npm",
+        "args": ["audit", "--audit-level=high"]
+      },
+      "failAtOrAbove": "high"
+    },
+    {
+      "order": 5,
+      "id": "unit-tests",
+      "command": {
+        "executable": "npm",
+        "args": ["run", "test:unit"]
+      }
+    },
+    {
+      "order": 6,
+      "id": "integration-tests",
+      "command": {
+        "executable": "npm",
+        "args": ["run", "test:integration"]
+      }
+    },
+    {
+      "order": 7,
+      "id": "http-contract-tests",
+      "command": {
+        "executable": "npm",
+        "args": ["run", "test:contract"]
+      }
+    },
+    {
+      "order": 8,
+      "id": "coverage",
+      "command": {
+        "executable": "npm",
+        "args": ["run", "test:coverage"]
+      }
+    },
+    {
+      "order": 9,
+      "id": "integrity",
+      "command": {
+        "executable": "node",
+        "args": [".harness/checks/verify-integrity.mjs"]
+      }
+    }
+  ],
+  "coverage": {
+    "tool": "c8",
+    "sourceScope": "src/**/*.ts",
+    "statementsPercent": 80,
+    "branchesPercent": 80,
+    "requiredFlags": [
+      "--all",
+      "--include",
+      "src/**/*.ts",
+      "--check-coverage",
+      "--statements",
+      "80",
+      "--branches",
+      "80"
+    ]
+  },
+  "integrity": {
+    "baselineFiles": {
+      "protectedInputs": "evidence/baseline/amendments/001-direct-typescript-test-execution/revisions/004-integration-coverage-validation/protected-inputs.sha256",
+      "harnessControls": "evidence/baseline/amendments/001-direct-typescript-test-execution/revisions/004-integration-coverage-validation/harness-control.sha256",
+      "acceptanceTestInventory": "evidence/baseline/amendments/001-direct-typescript-test-execution/revisions/004-integration-coverage-validation/acceptance-test-inventory.json"
+    },
+    "protectedInputs": {
+      "specification": "specs/001-smart-todo-api/spec.md",
+      "openapiContract": "specs/001-smart-todo-api/contracts/openapi.yaml",
+      "harnessControls": [
+        ".harness/policy.json",
+        ".harness/run.mjs",
+        ".harness/checks/syntax.mjs",
+        ".harness/checks/verify-integrity.mjs",
+        ".harness/schemas/check-result.schema.json",
+        ".harness/schemas/agent-feedback.schema.json",
+        ".harness/schemas/human-decision.schema.json",
+        "evidence/baseline/amendments/001-direct-typescript-test-execution/revisions/004-integration-coverage-validation/protected-inputs.sha256"
+      ],
+      "packageManifest": "package.json",
+      "dependencyLock": "package-lock.json"
+    },
+    "acceptanceTestChangePolicy": "human-review-and-explicit-rebaseline"
+  }
+}
