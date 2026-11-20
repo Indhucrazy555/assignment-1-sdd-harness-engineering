@@ -1,0 +1,9 @@
+{
+  "outcome": "PASS",
+  "checkLogsPresent": true,
+  "traceableEvaluationResults": true,
+  "retainedOutputs": [
+    "evidence/supplemental/run-001/evaluation-run.json",
+    "evidence/supplemental/run-001/evaluation-inputs.json"
+  ]
+}

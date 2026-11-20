@@ -1,0 +1,10 @@
+$ npm.cmd run typecheck
+
+STDOUT
+
+> natural-language-reminder-agent@1.0.0 typecheck
+> tsc --noEmit -p tsconfig.json
+
+
+STDERR
+

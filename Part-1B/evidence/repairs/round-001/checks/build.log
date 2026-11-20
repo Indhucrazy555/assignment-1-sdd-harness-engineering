@@ -1,0 +1,9 @@
+$ npm.cmd run build
+
+STDOUT
+
+> natural-language-reminder-agent@1.0.0 build
+> tsc -p tsconfig.json
+
+
+STDERR

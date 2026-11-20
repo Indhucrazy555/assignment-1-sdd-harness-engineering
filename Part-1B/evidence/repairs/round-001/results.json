@@ -1,0 +1,56 @@
+{
+  "phase": "repair",
+  "round": "001",
+  "startedAt": "2026-11-20T12:39:47.249Z",
+  "completedAt": "2026-11-20T12:39:57.813Z",
+  "checks": [
+    {
+      "name": "typecheck",
+      "command": "npm.cmd run typecheck",
+      "exitCode": 0,
+      "outcome": "PASS",
+      "startedAt": "2026-11-20T12:39:47.249Z",
+      "completedAt": "2026-11-20T12:39:49.496Z",
+      "log": "evidence/repairs/round-001/checks/typecheck.log"
+    },
+    {
+      "name": "build",
+      "command": "npm.cmd run build",
+      "exitCode": 0,
+      "outcome": "PASS",
+      "startedAt": "2026-11-20T12:39:49.497Z",
+      "completedAt": "2026-11-20T12:39:51.382Z",
+      "log": "evidence/repairs/round-001/checks/build.log"
+    },
+    {
+      "name": "tests",
+      "command": "npm.cmd test",
+      "exitCode": 0,
+      "outcome": "PASS",
+      "startedAt": "2026-11-20T12:39:51.382Z",
+      "completedAt": "2026-11-20T12:39:55.149Z",
+      "log": "evidence/repairs/round-001/checks/tests.log"
+    },
+    {
+      "name": "evaluation",
+      "command": "npm.cmd run evaluate",
+      "exitCode": 0,
+      "outcome": "PASS",
+      "startedAt": "2026-11-20T12:39:55.151Z",
+      "completedAt": "2026-11-20T12:39:57.806Z",
+      "log": "evidence/repairs/round-001/checks/evaluation.log"
+    }
+  ],
+  "evaluationRunId": "547ac049-a2f0-41f6-969f-85b0edb98201",
+  "evaluationOutcome": "PASS",
+  "integrity": {
+    "outcome": "PASS",
+    "checkLogsPresent": true,
+    "traceableEvaluationResults": true,
+    "retainedOutputs": [
+      "evidence/repairs/round-001/evaluation-run.json",
+      "evidence/repairs/round-001/evaluation-inputs.json"
+    ]
+  },
+  "outcome": "PASS"
+}

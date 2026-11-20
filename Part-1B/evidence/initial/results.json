@@ -1,0 +1,55 @@
+{
+  "phase": "initial",
+  "startedAt": "2026-11-20T12:38:49.019Z",
+  "completedAt": "2026-11-20T12:38:59.664Z",
+  "checks": [
+    {
+      "name": "typecheck",
+      "command": "npm.cmd run typecheck",
+      "exitCode": 0,
+      "outcome": "PASS",
+      "startedAt": "2026-11-20T12:38:49.019Z",
+      "completedAt": "2026-11-20T12:38:51.421Z",
+      "log": "evidence/initial/checks/typecheck.log"
+    },
+    {
+      "name": "build",
+      "command": "npm.cmd run build",
+      "exitCode": 0,
+      "outcome": "PASS",
+      "startedAt": "2026-11-20T12:38:51.422Z",
+      "completedAt": "2026-11-20T12:38:53.341Z",
+      "log": "evidence/initial/checks/build.log"
+    },
+    {
+      "name": "tests",
+      "command": "npm.cmd test",
+      "exitCode": 0,
+      "outcome": "PASS",
+      "startedAt": "2026-11-20T12:38:53.342Z",
+      "completedAt": "2026-11-20T12:38:57.041Z",
+      "log": "evidence/initial/checks/tests.log"
+    },
+    {
+      "name": "evaluation",
+      "command": "npm.cmd run evaluate",
+      "exitCode": 0,
+      "outcome": "PASS",
+      "startedAt": "2026-11-20T12:38:57.042Z",
+      "completedAt": "2026-11-20T12:38:59.660Z",
+      "log": "evidence/initial/checks/evaluation.log"
+    }
+  ],
+  "evaluationRunId": "4344f3ec-7ada-4189-bf0d-96e4c3a6dd22",
+  "evaluationOutcome": "PASS",
+  "integrity": {
+    "outcome": "PASS",
+    "checkLogsPresent": true,
+    "traceableEvaluationResults": true,
+    "retainedOutputs": [
+      "evidence/initial/evaluation-run.json",
+      "evidence/initial/evaluation-inputs.json"
+    ]
+  },
+  "outcome": "PASS"
+}

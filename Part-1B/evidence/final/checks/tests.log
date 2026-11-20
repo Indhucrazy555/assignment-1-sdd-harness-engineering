@@ -1,0 +1,60 @@
+$ npm.cmd test
+
+STDOUT
+
+> natural-language-reminder-agent@1.0.0 test
+> npm run build && node --test "dist/tests/**/*.test.js"
+
+
+> natural-language-reminder-agent@1.0.0 build
+> tsc -p tsconfig.json
+
+✔ contains every approved evaluation case exactly once in order (14.6494ms)
+✔ separates provider failure from the 26 response cases (0.5393ms)
+✔ marks the specified pre-provider cases explicitly (1.7528ms)
+✔ gives every case input, provider behavior, and expected outcome (0.3726ms)
+✔ preserves clarification details for EVAL-007 through EVAL-014 (60.6142ms)
+✔ requests missing explicit context without calling the provider (1.5385ms)
+✔ interprets EVAL-001 through EVAL-006 as exact validated ready responses (70.832ms)
+✔ repeats an identical clear evaluation without side effects (2.7548ms)
+✔ reports all 27 cases and the three validation layers independently (57.4899ms)
+✔ keeps EVAL-024 as a provider check without response-layer scoring (6.3138ms)
+✔ fails when the semantic aggregate is below 80 percent (2.4675ms)
+✔ schema failures fail the run even when semantic score passes (5.5704ms)
+✔ builds structured schema feedback with expected, observed, and evidence details (55.8429ms)
+✔ classifies unexpected provider results and rejects sensitive or incomplete feedback (2.8625ms)
+✔ returns schema-valid rejections for unsupported and unsafe cases (56.2945ms)
+✔ reports EVAL-024 as a provider failure with no fabricated response (4.3769ms)
+✔ maps every functional requirement to at least one approved case (3.7885ms)
+✔ references only the preserved evaluation case inventory (0.4754ms)
+✔ retains provider-failure and human-review traceability (0.4232ms)
+✔ links run results to requirements and adds failure-feedback requirements dynamically (56.9941ms)
+✔ creates write-once evidence manifests and detects altered files (533.2944ms)
+✔ lists the fixed harness check matrix (76.6869ms)
+✔ accepts a complete future ready response (37.8176ms)
+✔ rejects impossible and non-canonical UTC timestamps (0.6751ms)
+✔ rejects a scheduled instant that is not later than the reference (0.3697ms)
+✔ rejects invalid IANA zones and whitespace-only recipients (0.9649ms)
+✔ requires clarification questions and a null reason for clarification (0.393ms)
+✔ requires rejected responses to have no reminder or questions (0.2795ms)
+✔ rejects a ready response when the reference instant is invalid (0.6156ms)
+✔ returns a deterministic isolated response for an evaluation case (4.2272ms)
+✔ reports the controlled EVAL-024 provider failure distinctly (1.1363ms)
+✔ refuses a provider call for cases marked not called (0.8191ms)
+✔ fails explicitly for a case without a registered fixture (1.2678ms)
+✔ accepts a structurally valid ready response (2.9406ms)
+✔ accepts a clarification response with unresolved values null (0.2538ms)
+✔ accepts a rejected response with no reminder or questions (0.1721ms)
+✔ rejects extra properties and invalid status combinations (0.2516ms)
+✔ rejects malformed types and non-canonical timestamp formats (0.2704ms)
+✔ rejects extra properties nested in the reminder (0.2536ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1157.6762
+
+STDERR

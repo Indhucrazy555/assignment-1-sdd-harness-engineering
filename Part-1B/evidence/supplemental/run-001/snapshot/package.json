@@ -1,0 +1,27 @@
+{
+  "name": "natural-language-reminder-agent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "npm run build && node --test \"dist/tests/**/*.test.js\"",
+    "test:unit": "npm run build && node --test \"dist/tests/unit/**/*.test.js\"",
+    "test:evaluation": "npm run build && node --test \"dist/tests/evaluation/**/*.test.js\"",
+    "test:integration": "npm run build && node --test \"dist/tests/integration/**/*.test.js\"",
+    "evaluate": "npm run build && node dist/src/evaluation/run.js",
+    "harness": "node scripts/harness.mjs"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "typescript": "^5.9.3"
+  }
+}

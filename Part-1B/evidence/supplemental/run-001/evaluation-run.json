@@ -1,0 +1,1483 @@
+{
+  "runId": "4ff1a368-ee07-4fe4-9897-97901fc3c2bc",
+  "startedAt": "2026-11-20T19:57:30.273Z",
+  "completedAt": "2026-11-20T19:57:30.300Z",
+  "cases": [
+    {
+      "caseId": "EVAL-001",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "response",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "ready",
+        "reminder": {
+          "title": "Call Rahul",
+          "recipient": "me",
+          "scheduledAt": "2026-11-21T04:30:00.000Z",
+          "timeZone": "Asia/Kolkata"
+        },
+        "clarificationQuestions": [],
+        "reason": null
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-002",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "response",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "ready",
+        "reminder": {
+          "title": "Submit the report",
+          "recipient": "me",
+          "scheduledAt": "2026-11-23T03:30:00.000Z",
+          "timeZone": "Asia/Kolkata"
+        },
+        "clarificationQuestions": [],
+        "reason": null
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-003",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "response",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "ready",
+        "reminder": {
+          "title": "Pay the electricity bill",
+          "recipient": "me",
+          "scheduledAt": "2026-11-23T12:30:00.000Z",
+          "timeZone": "Asia/Kolkata"
+        },
+        "clarificationQuestions": [],
+        "reason": null
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-004",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "response",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "ready",
+        "reminder": {
+          "title": "Start the laundry",
+          "recipient": "me",
+          "scheduledAt": "2026-11-20T18:30:00.000Z",
+          "timeZone": "Asia/Kolkata"
+        },
+        "clarificationQuestions": [],
+        "reason": null
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-005",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "response",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "ready",
+        "reminder": {
+          "title": "Lock the office",
+          "recipient": "me",
+          "scheduledAt": "2026-11-23T18:29:00.000Z",
+          "timeZone": "Asia/Kolkata"
+        },
+        "clarificationQuestions": [],
+        "reason": null
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-006",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "response",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "ready",
+        "reminder": {
+          "title": "Call the clinic",
+          "recipient": "Rahul",
+          "scheduledAt": "2026-11-21T04:30:00.000Z",
+          "timeZone": "Asia/Kolkata"
+        },
+        "clarificationQuestions": [],
+        "reason": null
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-007",
+      "requirementIds": [
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "response",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "needs_clarification",
+        "reminder": {
+          "title": "Call Rahul",
+          "recipient": "me",
+          "scheduledAt": null,
+          "timeZone": "Asia/Kolkata"
+        },
+        "clarificationQuestions": [
+          "What time should I use?"
+        ],
+        "reason": null
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-008",
+      "requirementIds": [
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "response",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "needs_clarification",
+        "reminder": {
+          "title": "Renew my license",
+          "recipient": "me",
+          "scheduledAt": null,
+          "timeZone": "Asia/Kolkata"
+        },
+        "clarificationQuestions": [
+          "Which date did you mean: March 4 or April 3?"
+        ],
+        "reason": null
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-009",
+      "requirementIds": [
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "response",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "needs_clarification",
+        "reminder": {
+          "title": "Call Rahul",
+          "recipient": "me",
+          "scheduledAt": null,
+          "timeZone": "Asia/Kolkata"
+        },
+        "clarificationQuestions": [
+          "What date should I use?"
+        ],
+        "reason": null
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-010",
+      "requirementIds": [
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "response",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "needs_clarification",
+        "reminder": {
+          "title": "Call the clinic",
+          "recipient": "me",
+          "scheduledAt": null,
+          "timeZone": "America/New_York"
+        },
+        "clarificationQuestions": [
+          "Which occurrence of 1:30 AM do you mean?"
+        ],
+        "reason": null
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-011",
+      "requirementIds": [
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "response",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "needs_clarification",
+        "reminder": {
+          "title": "Call the clinic",
+          "recipient": "me",
+          "scheduledAt": null,
+          "timeZone": "America/New_York"
+        },
+        "clarificationQuestions": [
+          "That local time does not exist; what time should I use?"
+        ],
+        "reason": null
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-012",
+      "requirementIds": [
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "response",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "needs_clarification",
+        "reminder": null,
+        "clarificationQuestions": [
+          "What should I remind you to do?"
+        ],
+        "reason": null
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-013",
+      "requirementIds": [
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "response",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "needs_clarification",
+        "reminder": {
+          "title": "Call Rahul",
+          "recipient": null,
+          "scheduledAt": "2026-11-21T04:30:00.000Z",
+          "timeZone": "Asia/Kolkata"
+        },
+        "clarificationQuestions": [
+          "Who should receive this reminder?"
+        ],
+        "reason": null
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-014",
+      "requirementIds": [
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "response",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "needs_clarification",
+        "reminder": null,
+        "clarificationQuestions": [
+          "What would you like to be reminded about, and when?"
+        ],
+        "reason": null
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-015",
+      "requirementIds": [
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-015",
+        "FR-016",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "response",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "rejected",
+        "reminder": null,
+        "clarificationQuestions": [],
+        "reason": "Recurring reminders are unsupported."
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-016",
+      "requirementIds": [
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-015",
+        "FR-016",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "response",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "rejected",
+        "reminder": null,
+        "clarificationQuestions": [],
+        "reason": "The requested calendar date is impossible."
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-017",
+      "requirementIds": [
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-015",
+        "FR-016",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "not_called",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "rejected",
+        "reminder": null,
+        "clarificationQuestions": [],
+        "reason": "Request text must contain 1 to 4,000 characters."
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-018",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-015",
+        "FR-016",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "not_called",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "rejected",
+        "reminder": null,
+        "clarificationQuestions": [],
+        "reason": "The supplied time zone is invalid."
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-019",
+      "requirementIds": [
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-015",
+        "FR-016",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "response",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "rejected",
+        "reminder": null,
+        "clarificationQuestions": [],
+        "reason": "The request contains unsafe instructions and was rejected."
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-020",
+      "requirementIds": [
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-015",
+        "FR-016",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "response",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "rejected",
+        "reminder": null,
+        "clarificationQuestions": [],
+        "reason": "Reminder delivery and email actions are unsupported."
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-021",
+      "requirementIds": [
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-015",
+        "FR-016",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "response",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "rejected",
+        "reminder": null,
+        "clarificationQuestions": [],
+        "reason": "Only one reminder request is supported."
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-022",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-015",
+        "FR-016",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "not_called",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "rejected",
+        "reminder": null,
+        "clarificationQuestions": [],
+        "reason": "Request text exceeds the 4,000-character limit."
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-023",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-015",
+        "FR-016",
+        "FR-017",
+        "FR-018",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-024",
+        "FR-025",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "not_called",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "rejected",
+        "reminder": null,
+        "clarificationQuestions": [],
+        "reason": "The request object contains an unsupported property."
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-024",
+      "requirementIds": [
+        "FR-017",
+        "FR-018",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-024",
+        "FR-025",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "failure",
+      "providerCheck": "PASS",
+      "response": null,
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "NOT_APPLICABLE",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "NOT_APPLICABLE",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "NOT_APPLICABLE",
+          "issues": []
+        }
+      ],
+      "providerErrorCode": "PROVIDER_UNAVAILABLE",
+      "failureKind": "provider"
+    },
+    {
+      "caseId": "EVAL-025",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-015",
+        "FR-016",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "not_called",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "rejected",
+        "reminder": null,
+        "clarificationQuestions": [],
+        "reason": "The supplied reference instant is impossible."
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-026",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "not_called",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "needs_clarification",
+        "reminder": null,
+        "clarificationQuestions": [
+          "Which IANA time zone should I use?"
+        ],
+        "reason": null
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    },
+    {
+      "caseId": "EVAL-027",
+      "requirementIds": [
+        "FR-001",
+        "FR-002",
+        "FR-003",
+        "FR-004",
+        "FR-005",
+        "FR-006",
+        "FR-007",
+        "FR-008",
+        "FR-009",
+        "FR-010",
+        "FR-011",
+        "FR-012",
+        "FR-013",
+        "FR-014",
+        "FR-019",
+        "FR-020",
+        "FR-021",
+        "FR-022",
+        "FR-023",
+        "FR-026",
+        "FR-027"
+      ],
+      "providerOutcome": "not_called",
+      "providerCheck": "PASS",
+      "response": {
+        "schemaVersion": "1.0",
+        "status": "needs_clarification",
+        "reminder": null,
+        "clarificationQuestions": [
+          "What reference date and time should I use in UTC?"
+        ],
+        "reason": null
+      },
+      "layers": [
+        {
+          "layer": "schema",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "deterministic",
+          "outcome": "PASS",
+          "issues": []
+        },
+        {
+          "layer": "semantic",
+          "outcome": "PASS",
+          "issues": [],
+          "points": 5
+        }
+      ]
+    }
+  ],
+  "semanticScore": 100,
+  "semanticThreshold": 80,
+  "schemaPassRate": 100,
+  "deterministicPassRate": 100,
+  "outcome": "PASS"
+}
