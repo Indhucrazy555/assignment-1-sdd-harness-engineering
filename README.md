@@ -112,7 +112,7 @@ The Part 1B provider implementation uses a deterministic mock; it does not claim
 ## Submission
 
 - **Source code:** Available in this GitHub repository.
-- **Demo video:** The recording will be linked here after uploading to Google Drive or OneDrive.
+- **Demo video:** https://drive.google.com/file/d/15NFWoifi1n_VFN1xiM_D7oRBq23QRKuc/view?usp=drive_link.
 - **Reflection report:** Submitted separately through the BITS Pilani LMS.
 
 ---
